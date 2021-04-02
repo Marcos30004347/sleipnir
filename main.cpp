@@ -42,17 +42,14 @@ int main() {
     std::cout << std::endl;
     matrix<4, 4, 2, 2> b(data1);
 
-    // matrix<4, 4, 2, 2> c = a.block_mul(b);
+    matrix<4, 4> c = matrix<4, 4>::block_mul(a, b);
 
-    // for(int i=0; i<4; i++) {
-    //     for(int j=0; j<4; j++) {
-    //         std::cout << c.get(i,j) << " "; 
-    //     }
-    //     std::cout << std::endl;
-    // }
-
-
-
+    for(int i=0; i<4; i++) {
+        for(int j=0; j<4; j++) {
+            std::cout << c.get(i,j) << " "; 
+        }
+        std::cout << std::endl;
+    }
 
     f32 data2[8];
     f32 data3[8];
