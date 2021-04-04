@@ -1,22 +1,13 @@
-#include "f32.hpp"
-#include "types.hpp"
+#ifndef SLEIPNIR_MAT_H
+#define SLEIPNIR_MAT_H
+
 #include <iostream>
-#include <math.h>
 
 #include "cl.hpp"
+#include "math.hpp"
 
-i32 max(i32 a, i32 b) {
-  i32 diff = a - b;
-  i32 dsgn = diff >> 31;
-  return a - (diff & dsgn);
-}
-
-i32 min(i32 a, i32 b) {
-  i32 diff = a - b;
-  i32 dsgn = diff >> 31;
-  return b + (diff & dsgn);
-}
-
+namespace sleipnir {
+	
 // 'block_height' neews to be a divisor of 'lines' and 'block_width' needs to be a
 // divisor of 'columns', so the matrix can be splited into 
 // (lines/block_height)*(columns/block_width) submatrices.
@@ -234,3 +225,7 @@ public:
 
 };
 
+};
+
+
+#endif

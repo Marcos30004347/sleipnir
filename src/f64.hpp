@@ -1,9 +1,10 @@
-#ifndef F64_H
-#define F64_H
+#ifndef SLEIPNIR_F64_H
+#define SLEIPNIR_F64_H
 
 #include <immintrin.h>
 #include <stdio.h>
 #include "types.hpp"
+namespace sleipnir {
 
 union f64x4 {
     __m256d data;
@@ -116,5 +117,5 @@ inline void f64_sqrt_mat_mul(int n, const f64* A, const f64* B, f64* C, i32 bloc
         }
     }
 }
-
+}
 #endif
